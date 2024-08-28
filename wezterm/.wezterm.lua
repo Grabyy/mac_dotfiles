@@ -1,0 +1,1 @@
+/Users/gaby/.config/wezterm/wezterm.lua
