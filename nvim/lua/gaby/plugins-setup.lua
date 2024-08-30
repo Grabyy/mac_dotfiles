@@ -99,15 +99,16 @@ return packer.startup(function(use)
 		end,
 	})
 
-	-- Markdown
-	-- install without yarn or npm
+	-- vimtex
 	use({
-		"iamcco/markdown-preview.nvim",
-		run = function()
-			vim.fn["mkdp#util#install"]()
+		"lervag/vimtex",
+		init = function()
+			-- VimTeX configuration goes here, e.g.
+			vim.g.vimtex_view_method = "zathura"
 		end,
 	})
 
+	-- Markdown
 	use({
 		"iamcco/markdown-preview.nvim",
 		run = "cd app && npm install",
