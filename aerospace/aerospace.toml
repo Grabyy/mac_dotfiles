@@ -95,8 +95,8 @@ alt-b = 'exec-and-forget open -n /Applications/Brave\ Browser.app'
 alt-p = 'exec-and-forget open -n /Applications/KeeWeb.app'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
-alt-slash = 'layout tiles horizontal vertical'
-alt-comma = 'layout accordion horizontal vertical'
+#alt-slash = 'layout tiles horizontal vertical'
+#alt-comma = 'layout accordion horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 alt-h = 'focus left'
@@ -111,8 +111,8 @@ ctrl-alt-k = 'move up'
 ctrl-alt-l = 'move right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
-alt-shift-minus = 'resize smart -50'
-alt-shift-equal = 'resize smart +50'
+alt-slash = 'resize smart -50'
+alt-shift-slash = 'resize smart +50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 alt-q = 'workspace A'

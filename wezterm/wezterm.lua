@@ -16,5 +16,8 @@ config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.85
 config.macos_window_background_blur = 15
 
+config.set_environment_variables = {
+	LANG = "fr_FR.UTF-8",
+}
 -- and finally, return the configuration to wezterm
 return config
