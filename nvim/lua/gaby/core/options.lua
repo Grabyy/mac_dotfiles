@@ -1,8 +1,8 @@
 local opt = vim.opt -- for conciseness
 
 -- line numbers
-opt.relativenumber = true
-opt.number = true
+-- opt.relativenumber = true
+-- opt.number = true
 
 -- tabs & indentation
 opt.tabstop = 2
@@ -37,9 +37,16 @@ opt.splitbelow = true
 
 opt.iskeyword:append("-")
 
--- NWRead
+-- mouse
 
---opt.netrw = true
+opt.mouse = ""
+
+-- Fold function option
+
+opt.foldcolumn = "1" -- '0' is not bad
+opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+opt.foldlevelstart = 99
+opt.foldenable = true
 
 -- spell
 opt.encoding = "utf-8"

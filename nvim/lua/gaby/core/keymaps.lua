@@ -33,7 +33,8 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
 -- Activate spell
 
-keymap.set("n", "<leader>co", ":setlocal spell!")
+keymap.set("n", "<leader>co", ":setlocal spell!<cr>")
+keymap.set("n", "<leader>cl", ":setlocal spell spelllang=en_us")
 
 ----------------------
 -- Plugin Keybinds
@@ -60,3 +61,7 @@ keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current c
 
 -- restart lsp server (not on youtube nvim video)
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
+
+-- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
+vim.keymap.set("n", "zR", require("ufo").openAllFolds)
+vim.keymap.set("n", "zM", require("ufo").closeAllFolds)

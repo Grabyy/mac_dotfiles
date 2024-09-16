@@ -23,7 +23,7 @@ mason_lspconfig.setup({
 	-- list of servers for mason to install
 	ensure_installed = {
 		"pyright", --python
-		"tsserver", --typescript
+		"ts_ls", --typescript
 		"html", --html
 		"cssls", --css
 		"tailwindcss", --css
@@ -40,7 +40,7 @@ mason_null_ls.setup({
 		"prettier", -- ts/js formatter
 		"stylua", -- lua formatter
 		"eslint_d", -- ts/js linter
-    "ruff", -- python
+		"ruff", -- python
 		"mypy", -- python
 		"black", --python
 	},
