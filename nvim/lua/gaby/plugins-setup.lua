@@ -102,9 +102,15 @@ return packer.startup(function(use)
 		end,
 	})
 
+	-- R
+	use({ "R-nvim/R.nvim" })
+	use({ "R-nvim/cmp-r" })
+	-- use({ "jalvesaq/Nvim-R" })
+
 	-- vimtex
 	use({
 		"lervag/vimtex",
+		-- tag = "v2.15", -- uncomment to pin to a specific release
 		init = function()
 			-- VimTeX configuration goes here, e.g.
 			vim.g.vimtex_view_method = "zathura"
@@ -114,11 +120,9 @@ return packer.startup(function(use)
 	-- Markdown
 	use({
 		"iamcco/markdown-preview.nvim",
-		run = "cd app && npm install",
-		setup = function()
-			vim.g.mkdp_filetypes = { "markdown" }
+		run = function()
+			vim.fn["mkdp#util#install"]()
 		end,
-		ft = { "markdown" },
 	})
 
 	if packer_bootstrap then
