@@ -40,6 +40,8 @@ keymap.set("n", "<leader>cl", ":setlocal spell spelllang=en_us")
 
 keymap.set("t", "<esc>", [[<C-\><C-n>]])
 
+keymap.set("n", "y", '"+y')
+
 ----------------------
 -- Plugin Keybinds
 ----------------------
