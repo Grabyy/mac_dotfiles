@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/gaby/.cache/nvim/packer_hererocks/2.1.1725453128/share/lua/5.1/?.lua;/Users/gaby/.cache/nvim/packer_hererocks/2.1.1725453128/share/lua/5.1/?/init.lua;/Users/gaby/.cache/nvim/packer_hererocks/2.1.1725453128/lib/luarocks/rocks-5.1/?.lua;/Users/gaby/.cache/nvim/packer_hererocks/2.1.1725453128/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/gaby/.cache/nvim/packer_hererocks/2.1.1725453128/lib/lua/5.1/?.so"
+local package_path_str = "/Users/gaby/.cache/nvim/packer_hererocks/2.1.1734355927/share/lua/5.1/?.lua;/Users/gaby/.cache/nvim/packer_hererocks/2.1.1734355927/share/lua/5.1/?/init.lua;/Users/gaby/.cache/nvim/packer_hererocks/2.1.1734355927/lib/luarocks/rocks-5.1/?.lua;/Users/gaby/.cache/nvim/packer_hererocks/2.1.1734355927/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/gaby/.cache/nvim/packer_hererocks/2.1.1734355927/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -209,6 +209,11 @@ _G.packer_plugins = {
     path = "/Users/gaby/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
+  ["otter.nvim"] = {
+    loaded = true,
+    path = "/Users/gaby/.local/share/nvim/site/pack/packer/start/otter.nvim",
+    url = "https://github.com/jmbuhr/otter.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/gaby/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -223,6 +228,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/gaby/.local/share/nvim/site/pack/packer/start/promise-async",
     url = "https://github.com/kevinhwang91/promise-async"
+  },
+  ["quarto-nvim"] = {
+    loaded = true,
+    path = "/Users/gaby/.local/share/nvim/site/pack/packer/start/quarto-nvim",
+    url = "https://github.com/quarto-dev/quarto-nvim"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,

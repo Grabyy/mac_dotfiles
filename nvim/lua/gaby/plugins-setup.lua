@@ -125,6 +125,17 @@ return packer.startup(function(use)
 		end,
 	})
 
+	use({
+		"jmbuhr/otter.nvim",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+		},
+		opts = {},
+	})
+
+	-- plugins/quarto.lua
+	use({ "quarto-dev/quarto-nvim" })
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

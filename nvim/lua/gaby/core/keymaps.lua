@@ -36,6 +36,10 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 keymap.set("n", "<leader>co", ":setlocal spell!<cr>")
 keymap.set("n", "<leader>cl", ":setlocal spell spelllang=en_us")
 
+--Terminal exit
+
+keymap.set("t", "<esc>", [[<C-\><C-n>]])
+
 ----------------------
 -- Plugin Keybinds
 ----------------------
