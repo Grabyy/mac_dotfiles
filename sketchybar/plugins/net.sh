@@ -1,7 +1,7 @@
 #!/bin/sh
 
-CURRENT_WIFI="$(networksetup -getairportnetwork en0)"
-SSID="$(echo "$CURRENT_WIFI" | awk -F ': ' '{print $2}')"
+CURRENT_WIFI="$(ipconfig getsummary en0)"
+SSID="$(echo "$CURRENT_WIFI" | awk -F ' SSID : '  '/ SSID : / {print $2}')"
 
 if [ "$SSID" = "" ]; then
   sketchybar --set $NAME label="Disconnected" icon="󱚼"
