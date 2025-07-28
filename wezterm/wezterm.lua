@@ -8,7 +8,7 @@ local config = wezterm.config_builder()
 --
 config.color_scheme = "Gruvbox Material (Gogh)"
 config.font = wezterm.font("Mononoki Nerd Font Mono")
-config.font_size = 14
+config.font_size = 16
 
 config.enable_tab_bar = false
 
