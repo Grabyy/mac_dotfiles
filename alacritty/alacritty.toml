@@ -1,0 +1,43 @@
+# Alacritty config
+[window]
+padding = { x = 12, y = 12 }
+decorations = "Buttonless"
+opacity = 0.96
+option_as_alt = "None"
+
+[font]
+size = 16
+
+[font.normal]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Regular"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Italic"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Bold Italic"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[cursor]
+style = { shape = "Block", blinking = "Off" }
+
+[selection]
+save_to_clipboard = true
+
+[env]
+TERM = "xterm-256color"
+
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/gruvbox_material_medium_dark.toml"
+]
