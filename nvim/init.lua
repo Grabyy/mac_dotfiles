@@ -15,10 +15,3 @@ require("gaby.plugins.ufo")
 require("gaby.plugins.autopairs")
 require("gaby.plugins.treesitter")
 require("gaby.plugins.gitsigns")
-
---Get the vim package
-vim.cmd([[
-set runtimepath^=~/.config/nvim/vim-plugins/ runtimepath+=~/.config/nvim/vim-plugins/after
-let &packpath = &runtimepath
-source ~/.config/nvim/vim-plugins/.vimrc
-]])
