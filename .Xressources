@@ -1,0 +1,85 @@
+! ==========================================================
+! ~/.Xresources
+! Gruvbox Material Dark — XTerm
+! ==========================================================
+
+! ----------------------------------------------------------
+! Font
+! ----------------------------------------------------------
+
+XTerm*faceName: DejaVu Sans Mono
+XTerm*faceSize: 11
+
+! ----------------------------------------------------------
+! Window
+! ----------------------------------------------------------
+
+XTerm*title: OpenBSD
+XTerm*internalBorder: 12
+XTerm*borderWidth: 0
+
+! ----------------------------------------------------------
+! Gruvbox Material Dark
+! ----------------------------------------------------------
+
+! Background / foreground
+XTerm*background: #282828
+XTerm*foreground: #d4be98
+
+! Cursor
+XTerm*cursorColor: #d4be98
+XTerm*cursorBlink: true
+
+! ----------------------------------------------------------
+! ANSI colors
+! ----------------------------------------------------------
+
+! Normal
+XTerm*color0:  #3c3836
+XTerm*color1:  #ea6962
+XTerm*color2:  #a9b665
+XTerm*color3:  #d8a657
+XTerm*color4:  #7daea3
+XTerm*color5:  #d3869b
+XTerm*color6:  #89b482
+XTerm*color7:  #d4be98
+
+! Bright
+XTerm*color8:  #5a524c
+XTerm*color9:  #ea6962
+XTerm*color10: #a9b665
+XTerm*color11: #d8a657
+XTerm*color12: #7daea3
+XTerm*color13: #d3869b
+XTerm*color14: #89b482
+XTerm*color15: #ddc7a1
+
+! ----------------------------------------------------------
+! XTerm behavior
+! ----------------------------------------------------------
+
+XTerm*saveLines: 10000
+XTerm*scrollBar: false
+
+XTerm*highlightSelection: true
+XTerm*highlightColor: #504945
+XTerm*highlightTextColor: #ddc7a1
+
+XTerm*selectToClipboard: true
+XTerm*trimSelection: true
+
+! UTF-8
+XTerm*locale: true
+XTerm*utf8: 2
+
+! Keyboard
+XTerm*metaSendsEscape: true
+XTerm*altIsNotMeta: false
+
+! Bell
+XTerm*visualBell: false
+XTerm*bellIsUrgent: false
+
+! Dynamic title
+XTerm*allowTitleOps: true
+XTerm*dynamicTitle: true

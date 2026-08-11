@@ -1,0 +1,71 @@
+# ==========================================================
+# ~/.cwmrc
+# Minimal OpenBSD cwm configuration
+# ==========================================================
+
+# ----------------------------------------------------------
+# Appearance
+# ----------------------------------------------------------
+
+fontname "DejaVu Sans Mono:size=10"
+
+# ----------------------------------------------------------
+# Colors
+# ----------------------------------------------------------
+
+color activeborder "#81a1c1"
+color inactiveborder "#3b4252"
+
+color menufg "#d8dee9"
+color menubg "#111318"
+
+color font "#d8dee9"
+
+# ----------------------------------------------------------
+# Window behavior
+# ----------------------------------------------------------
+
+# Keep the configuration minimal.
+sticky yes
+
+# ----------------------------------------------------------
+# Useful key bindings
+# ----------------------------------------------------------
+
+# Terminal
+bind-key CM-Return terminal
+
+# Application menu
+bind-key CM-space menu-exec
+
+# Window menu
+bind-key CM-w menu-window
+
+# Lock screen / exit helpers
+bind-key CM-q delete
+bind-key CM-x window-delete
+
+# Move focus
+bind-key CM-h window-left
+bind-key CM-j window-down
+bind-key CM-k window-up
+bind-key CM-l window-right
+
+# Cycle windows
+bind-key CM-Tab window-cycle
+
+# Hide/show windows
+bind-key CM-m window-hide
+bind-key CM-s window-show
+
+# ----------------------------------------------------------
+# Applications
+# ----------------------------------------------------------
+
+command terminal "xterm"
+#command browser "chrome"
+
+# ----------------------------------------------------------
+# Groups
+# ----------------------------------------------------------
+
