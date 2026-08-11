@@ -1,66 +1,69 @@
-# ==========================================================
-# ~/.cwmrc
-# Minimal OpenBSD cwm configuration
-# ==========================================================
+# CMS-r = restart
 
-# ----------------------------------------------------------
-# Appearance
-# ----------------------------------------------------------
+# these are for the menu
+#fontname "sans-serif:pixelsize=16"
+#fontname "monospace:pixelsize=15"
+#fontname "dejavu sans mono:size=7"
+fontname fixed-11
 
-fontname "DejaVu Sans Mono:size=12"
+moveamount 10	# granularity of finest movement
+vtile 50
+htile 75
+gap 1 1 1 1
+color activeborder red
+color inactiveborder black
+snapdist 3
 
-# ----------------------------------------------------------
-# Colors
-# ----------------------------------------------------------
+#bind-key CM-Return	"urxvt"
+bind-key CM-Return	"kitty"
+bind-key CM-minus	window-vtile
+bind-key CMS-minus	window-htile
+unbind-key CS-minus
+unbind-key CS-plus
+unbind-key C-slash
 
-color activeborder "#81a1c1"
-color inactiveborder "#3b4252"
+# autogroup definitions
+# as shown by xprop
+autogroup 1 kitty,kitty
+autogroup 2 urxvt,URxvt
+autogroup 3 brave-browser, Brave-browser
+autogroup 4 chromium-browser, Chromium-browser
+#autogroup 5 "thorium-browser", "Thorium-browser"
+autogroup 5 thorium-browser, Thorium-browser
+autogroup 6 "VirtualBox Manager", "VirtualBox Manager"
+autogroup 7 "VirtualBox Machine", "VirtualBox Machine"
+autogroup 8 "vncviewer", "Vncviewer"
+autogroup 9 "vncviewer", "Vncviewer"
 
-color menufg "#d8dee9"
-color menubg "#111318"
+bind-key M-1 group-toggle-1
+bind-key M-2 group-toggle-2
+bind-key M-3 group-toggle-3
+bind-key M-4 group-toggle-4
+bind-key M-5 group-toggle-5
+bind-key M-6 group-toggle-6
+bind-key M-7 group-toggle-7
+bind-key M-8 group-toggle-8
+bind-key M-9 group-toggle-9
+bind-key M-0 group-toggle-all
 
-color font "#d8dee9"
+# don't include Polybar as a window
+#ignore polybar
 
-# ----------------------------------------------------------
-# Window behavior
-# ----------------------------------------------------------
-
-# Keep the configuration minimal.
-sticky yes
-
-# ----------------------------------------------------------
-# Useful key bindings
-# ----------------------------------------------------------
-
-# Terminal
-bind-key CM-Return terminal
-
-# Application menu
-bind-key CM-space menu-exec
-
-# Window menu
-bind-key CM-w menu-window
-
-# Lock screen / exit helpers
-bind-key CM-q delete
-bind-key CM-x window-delete
-
-# Move focus
-bind-key CM-h window-left
-bind-key CM-j window-down
-bind-key CM-k window-up
-bind-key CM-l window-right
-
-# Cycle windows
-bind-key CM-Tab window-cycle
-
-# Hide/show windows
-bind-key CM-m window-hide
-bind-key CM-s window-show
-
-# ----------------------------------------------------------
-# Applications
-# ----------------------------------------------------------
-
-command terminal "xterm"
-#command browser "chrome"
+# applications
+# note - scroll up = shift-pageup, and scroll down = shift-pagedown
+# +ssr = turn off secondary screen scroll
+#command alacritty-top   "alacritty -e top"
+command xscreensaver	"xscreensaver"
+command xclock		"xclock"
+command chromium	"chrome"
+command tmux		"urxvt +sb -depth 32 -bg rgba:0000/0000/0000/aaaa -fg [100]grey -e tmux"
+command top-green	"urxvt +sb -depth 32 -bg rgba:1111/1111/1111/9999 -fg [100]green -e top"
+command top-magenta	"urxvt +sb -depth 32 -bg rgba:1111/1111/1111/9999 -fg [100]magenta -e top"
+command top-grey	"urxvt +sb -depth 32 -bg rgba:1111/1111/1111/9999 -fg [100]grey -e top"
+command top-lightgrey	"urxvt +sb -depth 32 -bg rgba:1111/1111/1111/9999 -fg [100]lightgrey -e top"
+command top-lightblue	"urxvt +sb -depth 32 -bg rgba:1111/1111/1111/9999 -fg [100]lightblue -e top"
+command top-lightgreen	"urxvt +sb -depth 32 -bg rgba:1111/1111/1111/9999 -fg [100]lightgreen -e top"
+command top-lightpink	"urxvt +sb -depth 32 -bg rgba:1111/1111/1111/9999 -fg [100]lightpink -e top"
+command top		"urxvt +sb -depth 32 -bg rgba:0000/0000/0000/6666 -fg [100]cyan -e top"
+command vim		"urxvt -e vim ."
+command gvim		"urxvt -e gvim ."
