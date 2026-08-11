@@ -7,7 +7,7 @@
 # Appearance
 # ----------------------------------------------------------
 
-fontname "DejaVu Sans Mono:size=10"
+fontname "DejaVu Sans Mono:size=12"
 
 # ----------------------------------------------------------
 # Colors
@@ -64,8 +64,3 @@ bind-key CM-s window-show
 
 command terminal "xterm"
 #command browser "chrome"
-
-# ----------------------------------------------------------
-# Groups
-# ----------------------------------------------------------
-
