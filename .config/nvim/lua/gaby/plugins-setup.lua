@@ -47,8 +47,6 @@ return packer.startup(function(use)
 
 	--file explorer
 	use("nvim-tree/nvim-tree.lua")
-
-	-- icons
 	use("kyazdani42/nvim-web-devicons")
 
 	-- Theme
@@ -56,7 +54,7 @@ return packer.startup(function(use)
 	use({ "f4z3r/gruvbox-material.nvim" })
 
 	-- fuzzy finding w/ telescope
-	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "gmake" }) -- dependency for better sorting performance
 	use({ "nvim-telescope/telescope.nvim" }) -- fuzzy finder
 
 	-- autocompletion
@@ -70,22 +68,22 @@ return packer.startup(function(use)
 	use("rafamadriz/friendly-snippets") -- useful snippets
 
 	-- managing & installing lsp servers, linters & formatters
-	use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
-	use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
+	-- use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
+	-- use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
 
 	-- configuring lsp servers
 	use("neovim/nvim-lspconfig") -- easily configure language servers
 	use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
 	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
-	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
+	-- use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
 	-- formatting & linting
-	use({ "nvimtools/none-ls.nvim" }) -- maintained fork of null-ls
-	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
+	-- use({ "nvimtools/none-ls.nvim" }) -- maintained fork of null-ls
+	-- use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
 	-- Debugger
-	use("mfussenegger/nvim-dap") --Debugger installer
-	use("jay-babu/mason-nvim-dap.nvim") -- bridges for mason
+	-- use("mfussenegger/nvim-dap") --Debugger installer
+	-- use("jay-babu/mason-nvim-dap.nvim") -- bridges for mason
 
 	-- auto closing
 	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
@@ -104,16 +102,6 @@ return packer.startup(function(use)
 			require("nvim-treesitter.install").update({ with_sync = true })
 		end,
 	})
-
-	-- -- vimtex
-	-- use({
-	-- 	"lervag/vimtex",
-	-- 	-- tag = "v2.15", -- uncomment to pin to a specific release
-	-- 	init = function()
-	-- 		-- VimTeX configuration goes here, e.g.
-	-- 		vim.g.vimtex_view_method = "zathura"
-	-- 	end,
-	-- })
 
 	-- Markdown
 	use({
