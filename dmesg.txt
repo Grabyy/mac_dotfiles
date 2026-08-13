@@ -1,0 +1,39 @@
+acpi0 at bios0: ACPI 6.0
+acpi0: sleep states S0 S1 S3 S4 S5
+acpi0: tables DSDT FACP SSDT MCFG TCPA APIC HPET TCPA BGRT
+acpi0: wakeup devices XHCI(S3)
+acpitimer0 at acpi0: 3579545 Hz, 24 bits
+acpimcfg0 at acpi0
+acpimcfg0: addr 0xe0000000, bus 0-255
+acpimadt0 at acpi0 addr 0xfee00000: PC-AT compat
+cpu0: cpuid 1 edx=bfebfbff<FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,CFLUSH,DS,ACPI,MMX,FXSR,SSE,SSE2,SS,HTT,TM,PBE> ecx=43d8e3bf<SSE3,PCLMUL,DTES64,MWAIT,DS-CPL,VMX,EST,TM2,SSSE3,CX16,xTPR,PDCM,SSE4.1,SSE4.2,MOVBE,POPCNT,DEADLINE,AES,RDRAND>
+acpihpet0 at acpi0: 14318179 Hz
+acpiprt0 at acpi0: bus 0 (PCI0)
+acpiec0 at acpi0
+acpipci0 at acpi0 PCI0: 0x00000000 0x00000011 0x00000001
+acpibtn0 at acpi0: LID0
+acpiac0 at acpi0: AC unit offline
+acpibat0 at acpi0: BAT0 model "AP13J4K" serial 0DB5 type LION oem "SONYCor"
+"GOOG0004" at acpi0 not configured
+acpicmos0 at acpi0
+pckbc1 at acpi0 addr 0x60/0x1 0x64/0x1 gpio irq pin 17: "GOOG000A"
+"INTL9C60" at acpi0 not configured
+"INTL9C60" at acpi0 not configured
+dwiic0 at acpi0 I2C5 addr 0xfccde000/0x1000 irq 36
+dwiic1 at acpi0 I2C6 addr 0xfccdc000/0x1000 irq 37
+iic1 at dwiic1
+ietp0 at iic1 addr 0x15 , can't establish interrupt
+"808622A8" at acpi0 not configured
+tpm0 at acpi0 TPM_ 1.2 (TIS) addr 0xfed40000/0x5000, Infineon SLB9635 1.2 rev 0x10
+chvgpio0 at acpi0 GPSW uid 1 addr 0xfed80000/0x8000 irq 49, 56 pins
+chvgpio1 at acpi0 GPNC uid 2 addr 0xfed88000/0x8000 irq 48, 59 pins
+chvgpio2 at acpi0 GPEC uid 3 addr 0xfed90000/0x8000 irq 50, 24 pins
+chvgpio3 at acpi0 GPSE uid 4 addr 0xfed98000/0x8000 irq 91, 55 pins
+acpicpu0 at acpi0: C2 bad (state 6 has no substates): C3 bad (state 6 has no substates): C1(1000@1 mwait.1), PSS
+acpicpu1 at acpi0: C2 bad (state 6 has no substates): C3 bad (state 6 has no substates): C1(1000@1 mwait.1), PSS
+acpicpu2 at acpi0: C2 bad (state 6 has no substates): C3 bad (state 6 has no substates): C1(1000@1 mwait.1), PSS
+acpicpu3 at acpi0: C2 bad (state 6 has no substates): C3 bad (state 6 has no substates): C1(1000@1 mwait.1), PSS
+"BOOT0000" at acpi0 not configured
+acpipwrres0 at acpi0: PLPE
+acpivideo0 at acpi0: GFX0
+acpivout0 at acpivideo0: LCD0
