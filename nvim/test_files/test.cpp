@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <iostream>
 #include <vector>
 
@@ -16,6 +15,5 @@ int main() {
   int y = 0;
 
   std::cout << x / y << std::endl;
-  printf("hemmp");
   return 0;
 }

@@ -22,7 +22,6 @@ require("lazy").setup({
 	"numToStr/Comment.nvim",
 
 	"nvim-tree/nvim-tree.lua",
-	"nvim-tree/nvim-web-devicons",
 
 	"f4z3r/gruvbox-material.nvim",
 
@@ -35,7 +34,7 @@ require("lazy").setup({
 
 	{
 		"nvim-telescope/telescope-fzf-native.nvim",
-		build = "make",
+		build = "gmake",
 		dependencies = {
 			"nvim-telescope/telescope.nvim",
 		},
@@ -61,14 +60,6 @@ require("lazy").setup({
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-	},
-
-	-- Markdown
-	{
-		"iamcco/markdown-preview.nvim",
-		build = function()
-			vim.fn["mkdp#util#install"]()
-		end,
 	},
 })
 
