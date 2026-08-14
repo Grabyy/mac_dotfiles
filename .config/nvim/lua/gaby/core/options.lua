@@ -50,8 +50,5 @@ opt.foldenable = true
 
 -- spell
 opt.encoding = "utf-8"
--- when downloading spellfiles
--- if NetRW is disabled, downloading of spellfiles fails!
--- Comment the nvim-tree line to disabled TS and use the default NetRW in init.lua
 opt.spelllang = { "fr" }
--- opt.spelllang = { "en_us", "fr" }
+

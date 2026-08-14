@@ -17,9 +17,16 @@ nvimtree.setup({
 	renderer = {
 		icons = {
 			glyphs = {
+          default = "",
+          symlink = "-",
 				folder = {
 					arrow_closed = "|", -- arrow when folder is closed
 					arrow_open = "->", -- arrow when folder is open
+          default = "",
+          open = "",
+          empty = "",
+          symlink = "-",
+          symlink_open = "-",
 				},
 			},
 		},
