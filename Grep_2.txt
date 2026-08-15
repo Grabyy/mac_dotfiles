@@ -1,0 +1,71 @@
+/usr/src/sys/dev/acpi/CVS/Entries:53:/chvgpio.c/1.15/Mon Jun 16 15:44:35 2025//TOPENBSD_7_9
+/usr/src/sys/dev/acpi/chvgpio.c:1:/*	$OpenBSD: chvgpio.c,v 1.15 2025/06/16 15:44:35 kettenis Exp $	*/
+/usr/src/sys/dev/acpi/chvgpio.c:49:struct chvgpio_intrhand {
+/usr/src/sys/dev/acpi/chvgpio.c:55:struct chvgpio_softc {
+/usr/src/sys/dev/acpi/chvgpio.c:69:	struct chvgpio_intrhand sc_pin_ih[16];
+/usr/src/sys/dev/acpi/chvgpio.c:75:chvgpio_pad_cfg0_offset(int pin)
+/usr/src/sys/dev/acpi/chvgpio.c:81:chvgpio_read_pad_cfg0(struct chvgpio_softc *sc, int pin)
+/usr/src/sys/dev/acpi/chvgpio.c:84:	    chvgpio_pad_cfg0_offset(pin));
+/usr/src/sys/dev/acpi/chvgpio.c:88:chvgpio_write_pad_cfg0(struct chvgpio_softc *sc, int pin, uint32_t val)
+/usr/src/sys/dev/acpi/chvgpio.c:91:	    chvgpio_pad_cfg0_offset(pin), val);
+/usr/src/sys/dev/acpi/chvgpio.c:95:chvgpio_read_pad_cfg1(struct chvgpio_softc *sc, int pin)
+/usr/src/sys/dev/acpi/chvgpio.c:98:	    chvgpio_pad_cfg0_offset(pin) + 4);
+/usr/src/sys/dev/acpi/chvgpio.c:102:chvgpio_write_pad_cfg1(struct chvgpio_softc *sc, int pin, uint32_t val)
+/usr/src/sys/dev/acpi/chvgpio.c:105:	    chvgpio_pad_cfg0_offset(pin) + 4, val);
+/usr/src/sys/dev/acpi/chvgpio.c:108:int	chvgpio_match(struct device *, void *, void *);
+/usr/src/sys/dev/acpi/chvgpio.c:109:void	chvgpio_attach(struct device *, struct device *, void *);
+/usr/src/sys/dev/acpi/chvgpio.c:111:const struct cfattach chvgpio_ca = {
+/usr/src/sys/dev/acpi/chvgpio.c:112:	sizeof(struct chvgpio_softc), chvgpio_match, chvgpio_attach
+/usr/src/sys/dev/acpi/chvgpio.c:115:struct cfdriver chvgpio_cd = {
+/usr/src/sys/dev/acpi/chvgpio.c:116:	NULL, "chvgpio", DV_DULL
+/usr/src/sys/dev/acpi/chvgpio.c:119:const char *chvgpio_hids[] = {
+/usr/src/sys/dev/acpi/chvgpio.c:146:int	chvgpio_check_pin(struct chvgpio_softc *, int);
+/usr/src/sys/dev/acpi/chvgpio.c:147:int	chvgpio_read_pin(void *, int);
+/usr/src/sys/dev/acpi/chvgpio.c:148:void	chvgpio_write_pin(void *, int, int);
+/usr/src/sys/dev/acpi/chvgpio.c:149:void	chvgpio_intr_establish(void *, int, int, int, int (*)(void *), void *);
+/usr/src/sys/dev/acpi/chvgpio.c:150:void	chvgpio_intr_enable(void *, int);
+/usr/src/sys/dev/acpi/chvgpio.c:151:void	chvgpio_intr_disable(void *, int);
+/usr/src/sys/dev/acpi/chvgpio.c:152:int	chvgpio_intr(void *);
+/usr/src/sys/dev/acpi/chvgpio.c:153:int	chvgpio_opreg_handler(void *, int, uint64_t, int, uint64_t *);
+/usr/src/sys/dev/acpi/chvgpio.c:156:chvgpio_match(struct device *parent, void *match, void *aux)
+/usr/src/sys/dev/acpi/chvgpio.c:163:	return acpi_matchhids(aaa, chvgpio_hids, cf->cf_driver->cd_name);
+/usr/src/sys/dev/acpi/chvgpio.c:167:chvgpio_attach(struct device *parent, struct device *self, void *aux)
+/usr/src/sys/dev/acpi/chvgpio.c:169:	struct chvgpio_softc *sc = (struct chvgpio_softc *)self;
+/usr/src/sys/dev/acpi/chvgpio.c:220:	    IPL_BIO, chvgpio_intr, sc, sc->sc_dev.dv_xname);
+/usr/src/sys/dev/acpi/chvgpio.c:227:	sc->sc_gpio.read_pin = chvgpio_read_pin;
+/usr/src/sys/dev/acpi/chvgpio.c:228:	sc->sc_gpio.write_pin = chvgpio_write_pin;
+/usr/src/sys/dev/acpi/chvgpio.c:229:	sc->sc_gpio.intr_establish = chvgpio_intr_establish;
+/usr/src/sys/dev/acpi/chvgpio.c:230:	sc->sc_gpio.intr_enable = chvgpio_intr_enable;
+/usr/src/sys/dev/acpi/chvgpio.c:231:	sc->sc_gpio.intr_disable = chvgpio_intr_disable;
+/usr/src/sys/dev/acpi/chvgpio.c:246:	    sc, chvgpio_opreg_handler);
+/usr/src/sys/dev/acpi/chvgpio.c:256:chvgpio_check_pin(struct chvgpio_softc *sc, int pin)
+/usr/src/sys/dev/acpi/chvgpio.c:269:chvgpio_read_pin(void *cookie, int pin)
+/usr/src/sys/dev/acpi/chvgpio.c:271:	struct chvgpio_softc *sc = cookie;
+/usr/src/sys/dev/acpi/chvgpio.c:274:	KASSERT(chvgpio_check_pin(sc, pin) == 0);
+/usr/src/sys/dev/acpi/chvgpio.c:276:	reg = chvgpio_read_pad_cfg0(sc, pin);
+/usr/src/sys/dev/acpi/chvgpio.c:281:chvgpio_write_pin(void *cookie, int pin, int value)
+/usr/src/sys/dev/acpi/chvgpio.c:283:	struct chvgpio_softc *sc = cookie;
+/usr/src/sys/dev/acpi/chvgpio.c:286:	KASSERT(chvgpio_check_pin(sc, pin) == 0);
+/usr/src/sys/dev/acpi/chvgpio.c:288:	reg = chvgpio_read_pad_cfg0(sc, pin);
+/usr/src/sys/dev/acpi/chvgpio.c:293:	chvgpio_write_pad_cfg0(sc, pin, reg);
+/usr/src/sys/dev/acpi/chvgpio.c:297:chvgpio_intr_establish(void *cookie, int pin, int flags, int level,
+/usr/src/sys/dev/acpi/chvgpio.c:300:	struct chvgpio_softc *sc = cookie;
+/usr/src/sys/dev/acpi/chvgpio.c:304:	KASSERT(chvgpio_check_pin(sc, pin) == 0);
+/usr/src/sys/dev/acpi/chvgpio.c:306:	reg = chvgpio_read_pad_cfg0(sc, pin);
+/usr/src/sys/dev/acpi/chvgpio.c:314:	reg = chvgpio_read_pad_cfg1(sc, pin);
+/usr/src/sys/dev/acpi/chvgpio.c:338:	chvgpio_write_pad_cfg1(sc, pin, reg);
+/usr/src/sys/dev/acpi/chvgpio.c:347:chvgpio_intr_enable(void *cookie, int pin)
+/usr/src/sys/dev/acpi/chvgpio.c:349:	struct chvgpio_softc *sc = cookie;
+/usr/src/sys/dev/acpi/chvgpio.c:353:	KASSERT(chvgpio_check_pin(sc, pin) == 0);
+/usr/src/sys/dev/acpi/chvgpio.c:355:	reg = chvgpio_read_pad_cfg0(sc, pin);
+/usr/src/sys/dev/acpi/chvgpio.c:366:chvgpio_intr_disable(void *cookie, int pin)
+/usr/src/sys/dev/acpi/chvgpio.c:368:	struct chvgpio_softc *sc = cookie;
+/usr/src/sys/dev/acpi/chvgpio.c:372:	KASSERT(chvgpio_check_pin(sc, pin) == 0);
+/usr/src/sys/dev/acpi/chvgpio.c:374:	reg = chvgpio_read_pad_cfg0(sc, pin);
+/usr/src/sys/dev/acpi/chvgpio.c:385:chvgpio_intr(void *arg)
+/usr/src/sys/dev/acpi/chvgpio.c:387:	struct chvgpio_softc *sc = arg;
+/usr/src/sys/dev/acpi/chvgpio.c:412:chvgpio_opreg_handler(void *cookie, int iodir, uint64_t address, int size,
+/usr/src/sys/dev/acpi/chvgpio.c:415:	struct chvgpio_softc *sc = cookie;
+/usr/src/sys/dev/acpi/files.acpi:159:device	chvgpio
+/usr/src/sys/dev/acpi/files.acpi:160:attach	chvgpio at acpi
+/usr/src/sys/dev/acpi/files.acpi:161:file	dev/acpi/chvgpio.c		chvgpio

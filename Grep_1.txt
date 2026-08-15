@@ -1,0 +1,15 @@
+/usr/src/sys/dev/acpi/acpi.c:1026:acpi_register_gpio(struct acpi_softc *sc, struct aml_node *devnode)
+/usr/src/sys/dev/acpi/acpivar.h:351:void	acpi_register_gpio(struct acpi_softc *, struct aml_node *);
+/usr/src/sys/dev/acpi/amdgpio.c:176:	acpi_register_gpio(sc->sc_acpi, sc->sc_node);
+/usr/src/sys/dev/acpi/aplgpio.c:172:	acpi_register_gpio(sc->sc_acpi, sc->sc_node);
+/usr/src/sys/dev/acpi/bytgpio.c:205:	acpi_register_gpio(sc->sc_acpi, sc->sc_node);
+/usr/src/sys/dev/acpi/ccpmic.c:127:	acpi_register_gpio(sc->sc_acpi, sc->sc_node);
+/usr/src/sys/dev/acpi/chvgpio.c:248:	acpi_register_gpio(sc->sc_acpi, sc->sc_node);
+/usr/src/sys/dev/acpi/dwgpio.c:167:	acpi_register_gpio(sc->sc_acpi, sc->sc_node);
+/usr/src/sys/dev/acpi/glkgpio.c:172:	acpi_register_gpio(sc->sc_acpi, sc->sc_node);
+/usr/src/sys/dev/acpi/pchgpio.c:559:	acpi_register_gpio(sc->sc_acpi, sc->sc_node);
+/usr/src/sys/dev/acpi/pckbc_acpi.c:109:void	pckbc_acpi_register_gpio_intrs(struct device *);
+/usr/src/sys/dev/acpi/pckbc_acpi.c:341:	config_defer(self, pckbc_acpi_register_gpio_intrs);
+/usr/src/sys/dev/acpi/pckbc_acpi.c:421:pckbc_acpi_register_gpio_intrs(struct device *dev)
+/usr/src/sys/dev/acpi/qcgpio.c:365:	acpi_register_gpio(sc->sc_acpi, sc->sc_node);
+/usr/src/sys/dev/acpi/tipmic.c:154:	acpi_register_gpio(sc->sc_acpi, sc->sc_node);
