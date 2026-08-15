@@ -1,34 +1,14 @@
-dwiic0 at acpi0 I2C5 addr 0xfccde000/0x1000 irq 36
-iic0 at dwiic0
-dwiic1 at acpi0 I2C6 addr 0xfccdc000/0x1000 irq 37
-iic1 at dwiic1
-dwiic0 at acpi0 I2C5 addr 0xfccde000/0x1000 irq 36
-iic0 at dwiic0
-dwiic DEBUG: \\_SB_.PCI0.I2C5.RTEK gpio node=0xffff800000064c08 gpio=0xffff800000064c08
-dwiic DEBUG: before deps node=\\_SB_.PCI0.I2C5.RTEK parent=0xffffffff82ad40a1 attach=0
-dwiic DEBUG: after deps node=\\_SB_.PCI0.I2C5.RTEK parent=0xffffffff82ad40a1 attach=0
-dwiic1 at acpi0 I2C6 addr 0xfccdc000/0x1000 irq 37
-iic1 at dwiic1
-dwiic DEBUG: \\_SB_.PCI0.I2C6.ETPA gpio node=0xffff800000065508 gpio=0xffff800000065508
-dwiic DEBUG: before deps node=\\_SB_.PCI0.I2C6.ETPA parent=0xffffffff82ad40a1 attach=0
-dwiic DEBUG: after deps node=\\_SB_.PCI0.I2C6.ETPA parent=0xffffffff82ad40a1 attach=0
-ietp0 at iic1 addr 0x15 dwiic: BEFORE CRS 
-dwiic: gpio_int_node=0xffff800000065508 name=GPNC gpio=0x0
-dwiic0 at acpi0 I2C5 addr 0xfccde000/0x1000 irq 36
-iic0 at dwiic0
-dwiic1 at acpi0 I2C6 addr 0xfccdc000/0x1000 irq 37
-iic1 at dwiic1
-dwiic0 at acpi0 I2C5 addr 0xfccde000/0x1000 irq 36
-iic0 at dwiic0
-dwiic DEBUG: \\_SB_.PCI0.I2C5.RTEK gpio node=0xffff800000064c08 gpio=0xffff800000064c08
-dwiic DEBUG: before deps node=\\_SB_.PCI0.I2C5.RTEK parent=0xffffffff82b06ff1 attach=0
-dwiic DEBUG: before \\_SB_.PCI0.I2C5.RTEK _DEP=0x0
-dwiic DEBUG: after deps node=\\_SB_.PCI0.I2C5.RTEK parent=0xffffffff82b06ff1 attach=0
-dwiic1 at acpi0 I2C6 addr 0xfccdc000/0x1000 irq 37
-iic1 at dwiic1
-dwiic DEBUG: \\_SB_.PCI0.I2C6.ETPA gpio node=0xffff800000065508 gpio=0xffff800000065508
-dwiic DEBUG: before deps node=\\_SB_.PCI0.I2C6.ETPA parent=0xffffffff82b06ff1 attach=0
-dwiic DEBUG: before \\_SB_.PCI0.I2C6.ETPA _DEP=0x0
-dwiic DEBUG: after deps node=\\_SB_.PCI0.I2C6.ETPA parent=0xffffffff82b06ff1 attach=0
-ietp0 at iic1 addr 0x15 dwiic: BEFORE CRS 
-dwiic: gpio_int_node=0xffff800000065508 name=GPNC gpio=0x0
+/usr/src/sys/dev/acpi/dwiic_acpi.c:49:int		dwiic_acpi_found_ihidev(struct dwiic_softc *,
+/usr/src/sys/dev/acpi/dwiic_acpi.c:51:int		dwiic_acpi_found_iatp(struct dwiic_softc *, struct aml_node *,
+/usr/src/sys/dev/acpi/dwiic_acpi.c:53:int		dwiic_acpi_found_ietp(struct dwiic_softc *, struct aml_node *,
+/usr/src/sys/dev/acpi/dwiic_acpi.c:55:void		dwiic_acpi_get_params(struct dwiic_softc *, char *, uint16_t *,
+/usr/src/sys/dev/acpi/dwiic_acpi.c:57:void		dwiic_acpi_power(struct dwiic_softc *, int);
+/usr/src/sys/dev/acpi/dwiic_acpi.c:67:	sizeof(struct dwiic_softc),
+/usr/src/sys/dev/acpi/dwiic_acpi.c:169:	struct dwiic_softc *sc = (struct dwiic_softc *)self;
+/usr/src/sys/dev/acpi/dwiic_acpi.c:334:dwiic_acpi_get_params(struct dwiic_softc *sc, char *method, uint16_t *hcnt,
+/usr/src/sys/dev/acpi/dwiic_acpi.c:371:	struct dwiic_softc *sc = (struct dwiic_softc *)aux;
+/usr/src/sys/dev/acpi/dwiic_acpi.c:443:	struct dwiic_softc *sc = (struct dwiic_softc *)arg;
+/usr/src/sys/dev/acpi/dwiic_acpi.c:525:dwiic_acpi_found_ihidev(struct dwiic_softc *sc, struct aml_node *node,
+/usr/src/sys/dev/acpi/dwiic_acpi.c:596:dwiic_acpi_found_ietp(struct dwiic_softc *sc, struct aml_node *node,
+/usr/src/sys/dev/acpi/dwiic_acpi.c:622:dwiic_acpi_found_iatp(struct dwiic_softc *sc, struct aml_node *node, char *dev,
+/usr/src/sys/dev/acpi/dwiic_acpi.c:655:dwiic_acpi_power(struct dwiic_softc *sc, int power)
