@@ -1,21 +1,54 @@
-void	dwiic_acpi_rescan(struct device *);
-
-void
-dwiic_acpi_rescan(struct device *self)
-{
-	struct dwiic_softc *sc = (struct dwiic_softc *)self;
-
-	aml_find_node(sc->sc_devnode, "_HID", dwiic_acpi_found_hid, sc);
-}
-
-else if (dwiic_matchhids(dev, ietp_hids) ||
-    dwiic_matchhids(cdev, ietp_hids)) {
-	if (crs.gpio_int_node != NULL &&
-	    crs.gpio_int_node->gpio == NULL) {
-		printf("dwiic: deferring IETP\n");
-		config_defer(&sc->sc_dev, dwiic_acpi_rescan);
-		return 0;
-	}
-
-	return dwiic_acpi_found_ietp(sc, node, dev, crs);
-}
+dwiic0 at acpi0 I2C5 addr 0xfccde000/0x1000 irq 36
+iic0 at dwiic0
+dwiic1 at acpi0 I2C6 addr 0xfccdc000/0x1000 irq 37
+iic1 at dwiic1
+dwiic0 at acpi0 I2C5 addr 0xfccde000/0x1000 irq 36
+iic0 at dwiic0
+dwiic DEBUG: \\_SB_.PCI0.I2C5.RTEK gpio node=0xffff800000064c08 gpio=0xffff800000064c08
+dwiic DEBUG: before deps node=\\_SB_.PCI0.I2C5.RTEK parent=0xffffffff82ad40a1 attach=0
+dwiic DEBUG: after deps node=\\_SB_.PCI0.I2C5.RTEK parent=0xffffffff82ad40a1 attach=0
+dwiic1 at acpi0 I2C6 addr 0xfccdc000/0x1000 irq 37
+iic1 at dwiic1
+dwiic DEBUG: \\_SB_.PCI0.I2C6.ETPA gpio node=0xffff800000065508 gpio=0xffff800000065508
+dwiic DEBUG: before deps node=\\_SB_.PCI0.I2C6.ETPA parent=0xffffffff82ad40a1 attach=0
+dwiic DEBUG: after deps node=\\_SB_.PCI0.I2C6.ETPA parent=0xffffffff82ad40a1 attach=0
+ietp0 at iic1 addr 0x15 dwiic: BEFORE CRS 
+dwiic: gpio_int_node=0xffff800000065508 name=GPNC gpio=0x0
+dwiic0 at acpi0 I2C5 addr 0xfccde000/0x1000 irq 36
+iic0 at dwiic0
+dwiic1 at acpi0 I2C6 addr 0xfccdc000/0x1000 irq 37
+iic1 at dwiic1
+dwiic0 at acpi0 I2C5 addr 0xfccde000/0x1000 irq 36
+iic0 at dwiic0
+dwiic DEBUG: \\_SB_.PCI0.I2C5.RTEK gpio node=0xffff800000064c08 gpio=0xffff800000064c08
+dwiic DEBUG: before deps node=\\_SB_.PCI0.I2C5.RTEK parent=0xffffffff82b06ff1 attach=0
+dwiic DEBUG: before \\_SB_.PCI0.I2C5.RTEK _DEP=0x0
+dwiic DEBUG: after deps node=\\_SB_.PCI0.I2C5.RTEK parent=0xffffffff82b06ff1 attach=0
+dwiic1 at acpi0 I2C6 addr 0xfccdc000/0x1000 irq 37
+iic1 at dwiic1
+dwiic DEBUG: \\_SB_.PCI0.I2C6.ETPA gpio node=0xffff800000065508 gpio=0xffff800000065508
+dwiic DEBUG: before deps node=\\_SB_.PCI0.I2C6.ETPA parent=0xffffffff82b06ff1 attach=0
+dwiic DEBUG: before \\_SB_.PCI0.I2C6.ETPA _DEP=0x0
+dwiic DEBUG: after deps node=\\_SB_.PCI0.I2C6.ETPA parent=0xffffffff82b06ff1 attach=0
+ietp0 at iic1 addr 0x15 dwiic: BEFORE CRS 
+dwiic: gpio_int_node=0xffff800000065508 name=GPNC gpio=0x0
+dwiic0 at acpi0 I2C5 addr 0xfccde000/0x1000 irq 36
+iic0 at dwiic0
+dwiic DEBUG: \\_SB_.PCI0.I2C5.RTEK gpio node=0xffff800000064c08 gpio=0xffff800000064c08
+dwiic DEBUG: before deps node=\\_SB_.PCI0.I2C5.RTEK parent=0xffffffff82bda771 attach=0
+dwiic DEBUG: before \\_SB_.PCI0.I2C5.RTEK _DEP=0x0
+dwiic DEBUG: after deps node=\\_SB_.PCI0.I2C5.RTEK parent=0xffffffff82bda771 attach=0
+dwiic1 at acpi0 I2C6 addr 0xfccdc000/0x1000 irq 37
+iic1 at dwiic1
+dwiic DEBUG: \\_SB_.PCI0.I2C6.ETPA gpio node=0xffff800000065508 gpio=0xffff800000065508
+dwiic DEBUG: before deps node=\\_SB_.PCI0.I2C6.ETPA parent=0xffffffff82bda771 attach=0
+dwiic DEBUG: before \\_SB_.PCI0.I2C6.ETPA _DEP=0x0
+dwiic DEBUG: after deps node=\\_SB_.PCI0.I2C6.ETPA parent=0xffffffff82bda771 attach=0
+dwiic: deferring IETP
+dwiic DEBUG: \\_SB_.PCI0.I2C6.ETPA gpio node=0xffff800000065508 gpio=0xffff800000065508
+dwiic DEBUG: before deps node=\\_SB_.PCI0.I2C6.ETPA parent=0xffffffff82bda771 attach=1
+dwiic DEBUG: before \\_SB_.PCI0.I2C6.ETPA _DEP=0x0
+dwiic DEBUG: after deps node=\\_SB_.PCI0.I2C6.ETPA parent=0xffffffff82bda771 attach=1
+ietp0 at iic1 addr 0x15 gpio 18dwiic: BEFORE CRS 
+dwiic: gpio_int_node=0xffff800000065508 name=GPNC gpio=0xffff800000079e08
+dwiic: In crs-> return ih
