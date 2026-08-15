@@ -1,14 +1,21 @@
-/usr/src/sys/dev/acpi/dwiic_acpi.c:49:int		dwiic_acpi_found_ihidev(struct dwiic_softc *,
-/usr/src/sys/dev/acpi/dwiic_acpi.c:51:int		dwiic_acpi_found_iatp(struct dwiic_softc *, struct aml_node *,
-/usr/src/sys/dev/acpi/dwiic_acpi.c:53:int		dwiic_acpi_found_ietp(struct dwiic_softc *, struct aml_node *,
-/usr/src/sys/dev/acpi/dwiic_acpi.c:55:void		dwiic_acpi_get_params(struct dwiic_softc *, char *, uint16_t *,
-/usr/src/sys/dev/acpi/dwiic_acpi.c:57:void		dwiic_acpi_power(struct dwiic_softc *, int);
-/usr/src/sys/dev/acpi/dwiic_acpi.c:67:	sizeof(struct dwiic_softc),
-/usr/src/sys/dev/acpi/dwiic_acpi.c:169:	struct dwiic_softc *sc = (struct dwiic_softc *)self;
-/usr/src/sys/dev/acpi/dwiic_acpi.c:334:dwiic_acpi_get_params(struct dwiic_softc *sc, char *method, uint16_t *hcnt,
-/usr/src/sys/dev/acpi/dwiic_acpi.c:371:	struct dwiic_softc *sc = (struct dwiic_softc *)aux;
-/usr/src/sys/dev/acpi/dwiic_acpi.c:443:	struct dwiic_softc *sc = (struct dwiic_softc *)arg;
-/usr/src/sys/dev/acpi/dwiic_acpi.c:525:dwiic_acpi_found_ihidev(struct dwiic_softc *sc, struct aml_node *node,
-/usr/src/sys/dev/acpi/dwiic_acpi.c:596:dwiic_acpi_found_ietp(struct dwiic_softc *sc, struct aml_node *node,
-/usr/src/sys/dev/acpi/dwiic_acpi.c:622:dwiic_acpi_found_iatp(struct dwiic_softc *sc, struct aml_node *node, char *dev,
-/usr/src/sys/dev/acpi/dwiic_acpi.c:655:dwiic_acpi_power(struct dwiic_softc *sc, int power)
+void	dwiic_acpi_rescan(struct device *);
+
+void
+dwiic_acpi_rescan(struct device *self)
+{
+	struct dwiic_softc *sc = (struct dwiic_softc *)self;
+
+	aml_find_node(sc->sc_devnode, "_HID", dwiic_acpi_found_hid, sc);
+}
+
+else if (dwiic_matchhids(dev, ietp_hids) ||
+    dwiic_matchhids(cdev, ietp_hids)) {
+	if (crs.gpio_int_node != NULL &&
+	    crs.gpio_int_node->gpio == NULL) {
+		printf("dwiic: deferring IETP\n");
+		config_defer(&sc->sc_dev, dwiic_acpi_rescan);
+		return 0;
+	}
+
+	return dwiic_acpi_found_ietp(sc, node, dev, crs);
+}
