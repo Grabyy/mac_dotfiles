@@ -1,0 +1,14 @@
+dwiic0 at acpi0 I2C5 addr 0xfccde000/0x1000 irq 36
+iic0 at dwiic0
+dwiic1 at acpi0 I2C6 addr 0xfccdc000/0x1000 irq 37
+iic1 at dwiic1
+dwiic0 at acpi0 I2C5 addr 0xfccde000/0x1000 irq 36
+iic0 at dwiic0
+dwiic1 at acpi0 I2C6 addr 0xfccdc000/0x1000 irq 37
+iic1 at dwiic1
+ietp0 at iic1 addr 0x15 dwiic: BEFORE CRS 
+dwiic: gpio_int_node=0xffff800000065508 name=GPNC gpio=0x0
+chvgpio0 at acpi0 GPSW uid 1 addr 0xfed80000/0x8000 irq 49 CHVGPIO DEBUG: node=0xffff800000064c08 gpio=0xffff800000079a08 name=GPSW
+chvgpio1 at acpi0 GPNC uid 2 addr 0xfed88000/0x8000 irq 48 CHVGPIO DEBUG: node=0xffff800000065508 gpio=0xffff800000079e08 name=GPNC
+chvgpio2 at acpi0 GPEC uid 3 addr 0xfed90000/0x8000 irq 50 CHVGPIO DEBUG: node=0xffff800000065288 gpio=0xffff8000000c2208 name=GPEC
+chvgpio3 at acpi0 GPSE uid 4 addr 0xfed98000/0x8000 irq 91 CHVGPIO DEBUG: node=0xffff800000066088 gpio=0xffff8000000c2608 name=GPSE
