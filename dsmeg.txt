@@ -14,3 +14,7 @@ dwiic DEBUG: before deps node=\\_SB_.PCI0.I2C6.ETPA parent=0xffffffff82ad40a1 at
 dwiic DEBUG: after deps node=\\_SB_.PCI0.I2C6.ETPA parent=0xffffffff82ad40a1 attach=0
 ietp0 at iic1 addr 0x15 dwiic: BEFORE CRS 
 dwiic: gpio_int_node=0xffff800000065508 name=GPNC gpio=0x0
+dwiic0 at acpi0 I2C5 addr 0xfccde000/0x1000 irq 36
+iic0 at dwiic0
+dwiic1 at acpi0 I2C6 addr 0xfccdc000/0x1000 irq 37
+iic1 at dwiic1
