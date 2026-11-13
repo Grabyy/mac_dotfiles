@@ -61,7 +61,11 @@ require("lazy").setup({
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 	},
+
+  --42 norm
+  "MoulatiMehdi/42norm.nvim",
 })
+
 
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = "plugins-setup.lua",

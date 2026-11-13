@@ -1,8 +1,9 @@
--- set colorscheme to nightfly with protected call
--- in case it isn't installed
+local gruv_setup, gruv = pcall(require, "gruvbox-material")
+if not gruv_setup then
+	return
+end
 
--- values shown are defaults and will be used if not provided
-require("gruvbox-material").setup({
+gruv.setup({
 	italics = true, -- enable italics in general
 	contrast = "soft", -- set contrast, can be any of "hard", "medium", "soft"
 	comments = {
@@ -21,7 +22,4 @@ require("gruvbox-material").setup({
     force_background = true,  -- or false, see note below
   },
   customize = nil, -- customize the theme in any way you desire, see below what this
-	-- configuration accepts
 })
-
---vim.cmd("colorscheme grubox-material")

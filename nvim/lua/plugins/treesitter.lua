@@ -1,15 +1,14 @@
--- import nvim-treesitter plugin safely
 local status, treesitter = pcall(require, "nvim-treesitter.configs")
 if not status then
 	return
 end
 
-vim.filetype.add({
-  extension = { nf = "nextflow" },
-  filename = { [".nf"] = "nextflow" },
-})
+-- vim.filetype.add({
+--   extension = { nf = "nextflow" },
+--   filename = { [".nf"] = "nextflow" },
+-- })
 
-vim.treesitter.language.register("groovy", "nextflow")
+-- vim.treesitter.language.register("groovy", "nextflow")
 
 -- configure treesitter
 treesitter.setup({
