@@ -41,8 +41,28 @@ vim.lsp.config("pylsp", {
     cmd = { "pylsp" },
     capabilities = capabilities,
     on_attach = on_attach,
+		settings = {
+			pylsp = {
+				plugins = {
+					flake8 = {
+						enabled = true,
+						maxLineLength = 88,
+					},
+					pycodestyle = {
+						enabled = false,
+					},
+					pyflakes = {
+						enabled = false,
+					},
+					pylsp_mypy = {
+						enabled = true,
+						live_mode = true,
+						strict = false,
+					},
+				},
+			},
+		},
 })
-
 -- Lua
 vim.lsp.config("lua_ls", {
     cmd = { "lua-language-server" },
